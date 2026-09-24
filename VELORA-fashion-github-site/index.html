@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VELORA — contemporary fashion designed for confident, effortless style.">
+  <meta name="theme-color" content="#111111">
+  <title>VELORA — Style That Speaks You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="announcement">NEW SEASON / FREE DELIVERY ON ORDERS OVER ₦100,000</div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="VELORA home">
+      <img src="assets/velora-logo.png" alt="VELORA logo">
+      <span>VELORA</span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+    <nav class="nav">
+      <a class="active" href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+      <button class="icon-btn cart-btn" id="cartBtn" aria-label="Shopping bag">Bag <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <div class="search-panel" id="searchPanel">
+    <input id="globalSearch" type="search" placeholder="Search VELORA..." autocomplete="off">
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">VELORA / NEW SEASON</p>
+        <h1>Style that<br><em>speaks you.</em></h1>
+        <p>Refined essentials and statement pieces created for modern confidence.</p>
+        <a class="btn btn-light" href="shop.html">Shop the collection</a>
+      </div>
+    </section>
+
+    <section class="section intro">
+      <p class="eyebrow">THE VELORA EDIT</p>
+      <h2>Less noise. More <em>presence.</em></h2>
+      <p class="intro-copy">VELORA brings together timeless silhouettes, expressive details and effortless elegance for people who dress with intention.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div><p class="eyebrow">CURATED FOR YOU</p><h2>Featured pieces</h2></div>
+        <a class="text-link" href="shop.html">View all →</a>
+      </div>
+      <div class="product-grid" id="featuredProducts"></div>
+    </section>
+
+    <section class="split-banner">
+      <div class="split-image image-editorial"></div>
+      <div class="split-copy">
+        <p class="eyebrow">THE ESSENTIALS</p>
+        <h2>Designed to be worn. Made to be remembered.</h2>
+        <p>Build a wardrobe around pieces that work beyond the moment.</p>
+        <a class="btn btn-dark" href="shop.html?category=Essentials">Explore essentials</a>
+      </div>
+    </section>
+
+    <section class="section categories">
+      <div class="section-head">
+        <div><p class="eyebrow">SHOP BY MOOD</p><h2>Find your expression</h2></div>
+      </div>
+      <div class="category-grid">
+        <a href="shop.html?category=Women" class="category-card category-women"><span>Women</span></a>
+        <a href="shop.html?category=Men" class="category-card category-men"><span>Men</span></a>
+        <a href="shop.html?category=Accessories" class="category-card category-accessories"><span>Accessories</span></a>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <p class="eyebrow">VELORA NOTES</p>
+      <h2>Be first to know.</h2>
+      <p>New drops, styling notes and private offers — occasionally, never noisily.</p>
+      <form id="newsletterForm" class="newsletter-form">
+        <input type="email" placeholder="Your email address" required>
+        <button class="btn btn-light" type="submit">Join</button>
+      </form>
+      <small id="newsletterMessage"></small>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div><strong>VELORA</strong><p>Style that speaks you.</p></div>
+    <div><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    <div><a href="#" aria-label="Instagram">Instagram</a><a href="#" aria-label="TikTok">TikTok</a><a href="#" aria-label="Pinterest">Pinterest</a></div>
+    <p class="copyright">© 2026 VELORA. All rights reserved.</p>
+  </footer>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer-head"><h3>Your bag</h3><button id="closeCart">×</button></div>
+    <div id="cartItems"></div>
+    <div class="cart-total"><span>Subtotal</span><strong id="cartTotal">₦0</strong></div>
+    <button class="btn btn-dark full" id="whatsappCheckout">Order via WhatsApp</button>
+    <p class="tiny">Your order will be prepared in WhatsApp. Payment can be completed after order confirmation.</p>
+  </aside>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
