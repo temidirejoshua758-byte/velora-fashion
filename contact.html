@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact VELORA for orders, styling questions and customer support.">
+  <title>Contact — VELORA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="announcement">NEW SEASON / FREE DELIVERY ON ORDERS OVER ₦100,000</div>
+  <header class="site-header"><a class="brand" href="index.html"><img src="assets/velora-logo.png" alt="VELORA logo"><span>VELORA</span></a><button class="menu-toggle">☰</button><nav class="nav"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a class="active" href="contact.html">Contact</a></nav><div class="header-actions"><button class="icon-btn" id="searchBtn">⌕</button><button class="icon-btn cart-btn" id="cartBtn">Bag <span id="cartCount">0</span></button></div></header>
+  <div class="search-panel" id="searchPanel"><input id="globalSearch" type="search" placeholder="Search VELORA..."></div>
+  <main>
+    <section class="page-hero"><p class="eyebrow">GET IN TOUCH</p><h1>Let's talk.</h1><p>Questions about an order, sizing or a piece? We're here.</p></section>
+    <section class="section contact-grid">
+      <div><p class="eyebrow">CONTACT</p><h2>We'd love to hear from you.</h2><div class="contact-details"><p><strong>WhatsApp</strong><br><a href="https://wa.me/2348000000000" target="_blank" rel="noopener">+234 800 000 0000</a></p><p><strong>Email</strong><br><a href="mailto:hello@velora-fashion.com">hello@velora-fashion.com</a></p><p><strong>Instagram</strong><br><a href="#" >@velora.fashion</a></p></div></div>
+      <form class="contact-form" id="contactForm">
+        <label>Name<input name="name" required></label><label>Email<input name="email" type="email" required></label><label>Message<textarea name="message" rows="6" required></textarea></label><button class="btn btn-dark" type="submit">Send message</button><p class="form-note" id="contactMessage"></p>
+      </form>
+    </section>
+  </main>
+  <footer class="footer"><div><strong>VELORA</strong><p>Style that speaks you.</p></div><div><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a></div><div><a href="#">Instagram</a><a href="#">TikTok</a></div><p class="copyright">© 2026 VELORA. All rights reserved.</p></footer>
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true"><div class="drawer-head"><h3>Your bag</h3><button id="closeCart">×</button></div><div id="cartItems"></div><div class="cart-total"><span>Subtotal</span><strong id="cartTotal">₦0</strong></div><button class="btn btn-dark full" id="whatsappCheckout">Order via WhatsApp</button></aside><div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <script src="js/products.js"></script><script src="js/main.js"></script>
+</body>
+</html>
