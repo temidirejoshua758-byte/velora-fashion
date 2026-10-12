@@ -148,4 +148,64 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCart();
   setupSearch(); setupMenu(); setupCart(); setupNewsletter(); setupContact();
   if (document.getElementById("featuredProducts")) renderProducts("featuredProducts", PRODUCTS.slice(0, 4));
+  
+  // Make the shop category filters work
+  const shopGrid = document.getElementById("shopProducts");
+
+  if (shopGrid) {
+    const filterButtons = document.querySelectorAll(".filter");
+    const sortSelect = document.getElementById("sortProducts");
+    const resultCount = document.getElementById("resultCount");
+
+    let selectedCategory = "All";
+
+    function updateShop() {
+      let products = PRODUCTS.filter(product => {
+        return selectedCategory === "All" ||
+          product.category.toLowerCase() ===
+          selectedCategory.toLowerCase();
+      });
+
+      const sortValue = sortSelect ? sortSelect.value : "featured";
+
+      if (sortValue === "low") {
+        products.sort((a, b) => a.price - b.price);
+      } else if (sortValue === "high") {
+        products.sort((a, b) => b.price - a.price);
+      } else if (sortValue === "name") {
+        products.sort((a, b) => a.name.localeCompare(b.name));
+      }
+
+      renderProducts("shopProducts", products);
+
+      if (resultCount) {
+        resultCount.textContent =
+          `${products.length} items`;
+      }
+
+      if (products.length === 0) {
+        shopGrid.innerHTML =
+          "<p>No products in this collection yet.</p>";
+      }
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        selectedCategory = button.dataset.category;
+
+        filterButtons.forEach(item => {
+          item.classList.toggle("active", item === button);
+        });
+
+        updateShop();
+      });
+    });
+
+    if (sortSelect) {
+      sortSelect.addEventListener("change", updateShop);
+    }
+
+    updateShop();
+  }
+
 });
